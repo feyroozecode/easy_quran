@@ -17,10 +17,13 @@ Functions:
 Juz:
 
 getJuzNumber(int surahNumber, int verseNumber) - Takes [surahNumber] & [verseNumber] and returns Juz number
+
 getSurahAndVersesFromJuz(int juzNumber) - Takes [juzNumber] and returns a map containing Surah and Verse numbers
+
 Surah:
 
 getSurahName(int surahNumber) - Takes [surahNumber] and returns the Surah name
+
 getSurahNameArabic(int surahNumber) - Takes [surahNumber] returns the Surah name in Arabic
 getSurahNameEnglish(int surahNumber) - Takes [surahNumber] returns the Surah name in English
 getSurahNameTurkish(int surahNumber) - Takes [surahNumber] returns the Surah name in Turkish

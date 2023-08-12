@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 import 'package:quran/quran.dart' as quran;
 
 class SuratScreen extends StatefulWidget {
@@ -28,9 +30,9 @@ class _SuratScreenState extends State<SuratScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                Text(
-                  "Surat",
-                  style: TextStyle(
+                const Text(
+                  "Surat(EasyQuran)",
+                  style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
@@ -49,6 +51,8 @@ class _SuratScreenState extends State<SuratScreen> {
                                 'ayat': quran.getVerseCount(index + 1),
                                 'number': index + 1
                               });
+                         
+                        
                         },
                         title: Text(
                           "${quran.getSurahName(index + 1)}",
@@ -63,15 +67,11 @@ class _SuratScreenState extends State<SuratScreen> {
                         trailing: Text(
                           "${quran.getVerseCount(index + 1)}",
                           style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       );
                     })
-              ], 
-              
-            )
-          )
-        )
-      );
+              ],
+            ))));
   }
 }
