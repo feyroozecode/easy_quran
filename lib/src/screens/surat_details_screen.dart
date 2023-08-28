@@ -18,7 +18,7 @@ class _SuratDetailsScreenState extends State<SuratDetailsScreen> {
         title: Text("${quran.getSurahName(widget.suratNumber)}"),
       ),
       body: PageView(
-        children: [
+        children: const [
           SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.all(4.0),
