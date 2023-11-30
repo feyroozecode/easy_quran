@@ -1,6 +1,6 @@
 # easy_quran
 
-A new Flutter project.
+A new Flutter App for Reading and listeing Quran easly with sample app with good performance for all muslim .
 
 ## Getting Started
 
