@@ -1,4 +1,3 @@
-
 class SurahData {
   int surahNumber;
   int startAtVerse;
@@ -11,5 +10,19 @@ class SurahData {
       required this.endAtVerse});
 
   // serialize
+  Map<String, dynamic> toJson() {
+    return {
+      'surahNumber': surahNumber,
+      'startAtVerse': startAtVerse,
+      'endAtVerse': endAtVerse
+    };
+  }
 
+  factory SurahData.fromJson(Map<String, dynamic> json) {
+    return SurahData(
+        surahNumber: json['surahNumber'],
+        startAtVerse: json['startAtVerse'],
+        endAtVerse: json['endAtVerse']);
+  }
+  
 }

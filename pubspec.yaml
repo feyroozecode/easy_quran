@@ -38,7 +38,7 @@ dependencies:
   quran: ^1.2.2
   get: ^4.6.5
 
-  smooth: packages/flutter_smooth/packages/smooth
+  # smooth: packages/flutter_smooth/packages/smooth
 
 dev_dependencies:
   flutter_test:

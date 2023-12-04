@@ -1,3 +1,4 @@
+import 'package:easy_quran/src/screens/surat_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/utils.dart';
@@ -62,6 +63,8 @@ class _SuratScreenState extends State<SuratScreen> {
                                 'ayat': quran.getVerseCount(index + 1),
                                 'number': index + 1
                               });
+
+                         Get.to(SuratDetailsScreen(suratNumber: (index +1 ) ));     
                         },
                         title: Text(
                           quran.getSurahName(index + 1),
