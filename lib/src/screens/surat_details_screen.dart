@@ -16,9 +16,9 @@ class _SuratDetailsScreenState extends State<SuratDetailsScreen> {
 
     var surahData = quran.getPageData(widget.suratNumber);
 
-    var jsonData = surahData
+    //var jsonData = surahData
 
-    var verses = quran.getVerse(surahNumber, verseNumber)
+    //var verses = quran.getVerse(surahNumber, verseNumber)
 
     return Scaffold(
       appBar: AppBar(
