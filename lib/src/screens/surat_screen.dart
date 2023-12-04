@@ -11,16 +11,27 @@ class SuratScreen extends StatefulWidget {
 }
 
 class _SuratScreenState extends State<SuratScreen> {
+  var list = [];
+
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+
+    populateSurates(list);
+  }
+
+  populateSurates(slist) {
     //list all surates
     for (var i = 1; i <= 114; i++) {
-      print("${quran.getSurahName(i)}");
-      // save it at list
-      var list = [];
-      list.add("${quran.getSurahName(i)}");
-    }
+      //print("${quran.getSurahName(i)}");
 
+      // save it at list
+      slist.add("${quran.getSurahName(i)}");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -32,7 +43,7 @@ class _SuratScreenState extends State<SuratScreen> {
                 const SizedBox(height: 20),
                 const Text(
                   "Surat(EasyQuran)",
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
@@ -45,27 +56,25 @@ class _SuratScreenState extends State<SuratScreen> {
                     itemBuilder: (context, index) {
                       return ListTile(
                         onTap: () {
-                          Navigator.pushNamed(context, '/suratdetail',
+                          Navigator.pushNamed(context, '/surat_detail',
                               arguments: {
                                 'surat': quran.getSurahName(index + 1),
                                 'ayat': quran.getVerseCount(index + 1),
                                 'number': index + 1
                               });
-                         
-                        
                         },
                         title: Text(
-                          "${quran.getSurahName(index + 1)}",
+                          quran.getSurahName(index + 1),
                           style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
-                          "${quran.getSurahNameArabic(index + 1)}",
+                          quran.getSurahNameArabic(index + 1),
                           style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                         trailing: Text(
-                          "${quran.getVerseCount(index + 1)}",
+                          "${quran.getVerseCount(index + 1)} vers.",
                           style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),

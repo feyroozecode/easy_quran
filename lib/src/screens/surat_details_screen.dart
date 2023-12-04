@@ -13,17 +13,24 @@ class SuratDetailsScreen extends StatefulWidget {
 class _SuratDetailsScreenState extends State<SuratDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+
+    var surahData = quran.getPageData(widget.suratNumber);
+
+    var jsonData = surahData
+
+    var verses = quran.getVerse(surahNumber, verseNumber)
+
     return Scaffold(
       appBar: AppBar(
         title: Text("${quran.getSurahName(widget.suratNumber)}"),
       ),
       body: PageView(
-        children: const [
+        children: [
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(4.0),
               child: Center(
-                child: Text('Surah Text content '),
+                child: Text(''),
               ),
             ),
           )
